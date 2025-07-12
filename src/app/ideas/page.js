@@ -5,7 +5,7 @@ import styles from './page.module.css';
 import Banner from "@/ui/banner";
 import Content from "@/ui/content";
 import Filter from "@/ui/filter";
-import {useEffect, useRef, useState} from "react";
+import {Suspense, useEffect, useRef, useState} from "react";
 import Card from "@/ui/card";
 import Pagination from "@/ui/pagination";
 import {useSearchParams} from "next/navigation";
@@ -13,6 +13,14 @@ import {useRouter} from "next/navigation";
 import SkeletonCard from "@/ui/skeletonCard";
 
 export default function IdeasPage() {
+    return(
+        <Suspense>
+            <Ideas/>
+        </Suspense>
+    )
+}
+
+function Ideas() {
 
     const searchParams = useSearchParams();
     const router = useRouter();
