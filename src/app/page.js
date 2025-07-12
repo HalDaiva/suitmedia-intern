@@ -13,6 +13,7 @@ export default function Home() {
             />
             <h1>Welcome to Suitmedia</h1>
             <p>We are a digital agency that helps you to grow your business. Check our amazing ideas <Link href='/ideas'>here</Link></p>
+            <p className={styles.credit}>By Halilintar Daiva Dirgantara</p>
         </div>
     )
 }
