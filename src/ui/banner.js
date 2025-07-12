@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image";
 import styles from './banner.module.css'
 import {useEffect, useState} from "react";
@@ -9,7 +11,7 @@ export default function Banner({title, subtitle, image}) {
     useEffect(() => {
         const handleScroll = () => {
             const currentYPos = window.scrollY;
-            setParallaxOffset(currentYPos * 0.4);
+            setParallaxOffset(currentYPos * 0.3);
         }
         window.addEventListener('scroll', handleScroll);
         return () => {window.removeEventListener('scroll', handleScroll)}

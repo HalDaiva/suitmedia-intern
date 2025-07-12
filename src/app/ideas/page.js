@@ -12,7 +12,7 @@ import {useSearchParams} from "next/navigation";
 import {useRouter} from "next/navigation";
 import SkeletonCard from "@/ui/skeletonCard";
 
-export default function Ideas() {
+export default function IdeasPage() {
 
     const searchParams = useSearchParams();
     const router = useRouter();
@@ -30,6 +30,8 @@ export default function Ideas() {
     const [isLoading, setIsLoading] = useState(true);
 
     const imageUrl = 'https://cdn.pixabay.com/photo/2017/07/31/11/21/people-2557396_1280.jpg';
+    const title = 'Ideas';
+    const subtitle = 'Where all out great things begin';
 
     useEffect(() => {
         setCurrentPage(urlPage || 1);
@@ -77,7 +79,7 @@ export default function Ideas() {
 
     return (
         <div>
-            <Banner title={'Ideas'} subtitle={'Ideas that inspire us'} image={imageUrl}/>
+            <Banner title={title} subtitle={subtitle} image={imageUrl}/>
             <div className={styles.scrollRef} ref={targetRef}></div>
             <Content>
                 <div className={styles.topbar}>
