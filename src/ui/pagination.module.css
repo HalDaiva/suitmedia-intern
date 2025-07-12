@@ -1,0 +1,47 @@
+.pagination {
+    display: flex;
+    flex-direction: row;
+    /*gap: 8px;*/
+    list-style: none;
+    font-weight: 600;
+    align-items: center;
+}
+
+.pageNumbers div {
+    padding: 8px;
+    border-radius: 8px;
+    display: inline-block;
+    padding-inline: 8px;
+    cursor: default;
+}
+
+.pageNumber {
+    cursor: pointer !important;
+}
+
+.pageNumber:hover, .pageNumber:active {
+    /*background-color: #e8e8e8;*/
+    color: var(--primary);
+}
+
+.disabled {
+    color: var(--disabeld);
+}
+
+.selected {
+    background-color: var(--primary);
+    color: var(--background) !important;
+}
+
+.chevron {
+    font-size: 2rem;
+    padding: 8px 0 5px 0 !important;
+}
+
+.chevron:not(.disabled) {
+    cursor: pointer;
+}
+
+.chevron:not(.disabled):hover {
+    color: var(--primary);
+}

@@ -1,14 +1,16 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --primary: #ff6600;
+  --disabeld: #d3d3d3;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/*@media (prefers-color-scheme: dark) {*/
+/*  :root {*/
+/*    --background: #0a0a0a;*/
+/*    --foreground: #ededed;*/
+/*  }*/
+/*}*/
 
 html,
 body {
@@ -35,8 +37,36 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+h1 {
+  font-weight: 500;
+}
+
+select {
+  padding: 8px 12px;
+  border-radius: 9999px;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.skeleton {
+  animation: skeleton 1.5s ease-in-out infinite;
+}
+
+@keyframes skeleton {
+  0% {
+    background-color: #e8e8e8;
+  }
+  50% {
+    background-color: #dcdcdc;
+  }
+  100% {
+    background-color: #e8e8e8;
   }
 }
+
+/*@media (prefers-color-scheme: dark) {*/
+/*  html {*/
+/*    color-scheme: dark;*/
+/*  }*/
+/*}*/

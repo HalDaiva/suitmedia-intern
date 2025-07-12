@@ -1,0 +1,26 @@
+.container {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.selectContainer {
+    position: relative;
+}
+
+.select::after {
+    content: "▼";
+    font-size: inherit;
+    color: #7e7e7e;
+    top: 10px;
+    right: 10px;
+    position: absolute;
+    pointer-events: none;
+}
+
+.container select {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 150px;
+    border-right: 16px;
+}
