@@ -17,6 +17,7 @@ export default function IdeasPage() {
     const searchParams = useSearchParams();
     const router = useRouter();
     const targetRef = useRef(null);
+    const mountedUseEffect = useRef(false);
 
     const urlPage = parseInt(searchParams.get('page'));
     const urlShow = parseInt(searchParams.get('show'));
@@ -70,6 +71,11 @@ export default function IdeasPage() {
     useEffect(() => {
         fetchContents();
 
+        if(!mountedUseEffect.current){
+            mountedUseEffect.current = true;
+            return;
+        }
+
         const params = new URLSearchParams(searchParams);
         params.set('page', currentPage.toString())
         router.push(`ideas?page=${currentPage}&show=${showPerPage}&sort=${sort}`, {scroll: false})
@@ -98,8 +104,9 @@ export default function IdeasPage() {
                         ))
                         : contents.map((content, index) => (
                             <Card key={content.id} title={content.title} date={content.published_at}
+                                  href={`/ideas/${content.slug}`}
                                   // thumbnail={images[index % 3]}/>
-                                  thumbnail={`https://picsum.photos/seed/${index+80}/300/200`}/>
+                                  thumbnail={`https://picsum.photos/seed/${content.id}/300/200`}/>
                         ))}
 
                 </div>

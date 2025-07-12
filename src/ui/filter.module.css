@@ -24,3 +24,10 @@
     width: 150px;
     border-right: 16px;
 }
+
+@media (max-width: 500px) {
+    .container {
+        flex-direction: column;
+        gap: 8px;
+    }
+}

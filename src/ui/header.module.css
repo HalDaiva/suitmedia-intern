@@ -58,3 +58,37 @@
 .onPage::after {
     transform: scaleX(1) !important;
 }
+
+.menu {
+    display: none;
+    color: var(--background);
+    cursor: pointer;
+    font-size: 32px;
+    z-index: 110;
+}
+
+@media (max-width: 750px) {
+    .navigation {
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: end;
+        justify-content: center;
+        background-color: var(--primary);
+        width: 70vw;
+        font-size: 2rem;
+        gap: 28px;
+        padding-right: 40px;
+        transform: translateX(0);
+        transition: transform 0.3s;
+    }
+    .navigationHidden {
+        transform: translateX(100%);
+    }
+    .menu {
+        display: block;
+    }
+
+}

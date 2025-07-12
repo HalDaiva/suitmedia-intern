@@ -1,0 +1,21 @@
+.article {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+
+.article h1 {
+    font-weight: 700;
+    margin: 24px 0 16px 0;
+}
+
+.article a {
+    color: var(--primary);
+    font-weight: 700;
+    text-decoration: underline;
+
+}

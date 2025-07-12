@@ -3,12 +3,12 @@ import Image from "next/image";
 import dayjs from "dayjs";
 import Link from "next/link";
 
-export default function Card({title, date, thumbnail}) {
+export default function Card({title, date, thumbnail, href}) {
 
     const formattedDate = dayjs(date).format('DD MMMM YYYY');
 
     return(
-        <Link href="/ideas">
+        <Link href={href}>
             <div className={styles.card}>
                 <div className={styles.thumbnail}>
                     <Image

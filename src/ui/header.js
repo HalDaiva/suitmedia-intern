@@ -15,12 +15,13 @@ export default function Header() {
     const [showHeader, setShowHeader] = useState(true);
     const [transparentHeader, setTransparentHeader] = useState(false)
     const [lastYPos, setLastYPos] = useState(0);
+    const [showMenu, setShowMenu] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
             const currentYPos = window.scrollY;
 
-            if(currentYPos > lastYPos && currentYPos > headerLimit){
+            if(currentYPos > lastYPos && currentYPos > headerLimit && !showMenu){
                 setShowHeader(false);
             } else {
                 setShowHeader(true);
@@ -40,6 +41,10 @@ export default function Header() {
         return () => {window.removeEventListener('scroll', handleScroll)}
 
     }, [lastYPos]);
+
+    useEffect(() => {
+        setShowMenu(false)
+    }, [pathname]);
 
     const navigations = [
         {name: 'Work', href: '/work'},
@@ -62,7 +67,10 @@ export default function Header() {
                             width={124}
                         />
                     </Link>
-                    <ul className={styles.navigation}>
+                    <div className={styles.menu} onClick={() => setShowMenu(!showMenu)}>
+                        <i className='bx bx-menu-alt-right'></i>
+                    </div>
+                    <ul className={`${styles.navigation} ${!showMenu ? styles.navigationHidden : null}`}>
                         {navigations.map((navigation, index) => (
                             <li key={index}><Link href={navigation.href} className={pathname === navigation.href ? styles.onPage : null}>{navigation.name}</Link></li>
                         ))}
